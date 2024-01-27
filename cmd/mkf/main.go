@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	default_dir_permissons_code = 755
+	default_dir_permissons_code = 0700
 )
 
 func main() {
@@ -24,7 +24,7 @@ func main() {
 		fmt.Printf("Error:\n%s", err.Error())
 		os.Exit(-1)
 	}
-	_, err = os.Create(pathComponents.Filename)
+	_, err = os.Create(filePath)
 	if err != nil {
 		fmt.Printf("Error:\n%s", err.Error())
 		os.Exit(-1)
