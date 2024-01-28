@@ -1,4 +1,4 @@
-package pathspltr
+package fspath
 
 import (
 	"testing"
@@ -37,7 +37,7 @@ func TestFilePathSplitting(t *testing.T) {
 	for testname, testData := range cases {
 		t.Run(testname, func(t *testing.T) {
 			// act
-			pathComponents := GetFilePathParts(testData.givenPath)
+			pathComponents := getPathComponents(testData.givenPath)
 
 			// assert
 			assert.EqualValues(t, pathComponents.DirPath, testData.expectedDirPath)

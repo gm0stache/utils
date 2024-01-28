@@ -1,16 +1,16 @@
-package pathspltr
+package fspath
 
 import (
 	"path/filepath"
 )
 
-type PathComponent struct {
+type pathComponents struct {
 	Filename string
 	DirPath  string
 }
 
-func GetFilePathParts(path string) PathComponent {
-	return PathComponent{
+func getPathComponents(path string) pathComponents {
+	return pathComponents{
 		Filename: filepath.Base(path),
 		DirPath:  filepath.Dir(path),
 	}
