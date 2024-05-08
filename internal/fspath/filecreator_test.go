@@ -40,8 +40,8 @@ func TestFsCreator(t *testing.T) {
 
 			// assert
 			assert.NoError(t, err)
-			// fileExists, _ := fakeFS.fs.Exists(path)
-			// assert.True(t, fileExists, "file should be created")
+			_, err = fakeFS.fs.Stat(path)
+			assert.NoError(t, err, "file should be present")
 		})
 	}
 }
